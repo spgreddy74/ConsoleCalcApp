@@ -15,37 +15,41 @@ namespace ConsoleCalcApp
 
             while(keepAlive)
             {
-                //Use try - catch block to handle exceptions 
+                //Use try - catch block to handle number format exception  
                 Console.WriteLine("Enter number :");
                 numA = Convert.ToDouble(Console.ReadLine());
+                
+                
+                     
 
                 //Use try - catch block to handle exceptions
                 Console.WriteLine("Enter number :");
                 numB = Convert.ToDouble(Console.ReadLine());  
-
+                
+                
                 Console.WriteLine("Enter the operation '+ - * /' to perform");
                 operation = Console.ReadLine();
 
-                // put each case a method 
+                // put each case as a method 
                 switch(operation)
                 {
                     case "+":
-                        output = numA + numB;
+                        output = Add(numA, numB); 
                         Console.WriteLine("{0} + {1} = {2}", numA, numB, output);
                         break;
 
                     case "-":
-                        output = numA - numB;
+                        output = Sub(numA, numB);
                         Console.WriteLine("{0} - {1} = {2}", numA, numB, output);
                         break;
 
                     case "*":
-                        output = numA * numB;
+                        output = Mul(numA, numB);
                         Console.WriteLine("{0} * {1} = {2}", numA, numB, output);
                         break;
 
                     case "/":
-                        output = numA / numB;
+                        output = Div(numA, numB);
                         Console.WriteLine("{0} / {1} = {2}", numA, numB, output);
                         break;
 
@@ -61,6 +65,35 @@ namespace ConsoleCalcApp
                 
                 
             }
+
+            //Addition of given numbers
+            static double Add(double numA, double numB)
+            {
+                double output = numA + numB;
+                return output;
+            }
+
+            //Substraction of given numbers         
+            static double Sub(double numA, double numB)
+            {
+                double output = numA - numB;
+                return output;
+            }
+
+            //Multiplication of given numbers         
+            static double Mul(double numA, double numB)
+            {
+                double output = numA * numB;
+                return output;
+            }
+
+            //Division of given numbers         
+            static double Div(double numA, double numB)
+            {
+                double output = numA / numB;
+                return output;
+            }
+
 
         }
     }
